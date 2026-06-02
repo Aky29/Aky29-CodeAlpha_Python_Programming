@@ -16,13 +16,13 @@ while True:
 
         data.append({"Name of stock":stock,"Number of stocks":number_of_stocks,'Investment amount':investment})
 
-        with open("Investment.csv","w") as file:
-            writer = csv.DictWriter(file,fieldnames=['Name of stock','Number of stocks','Investment amount'])
-            writer.writeheader()
-            writer.writerows(data)
-            file.close()
 
     else :print("not a valid stock")
+with open("Investment.csv","w") as file:
+    writer = csv.DictWriter(file,fieldnames=['Name of stock','Number of stocks','Investment amount'])
+    writer.writeheader()
+    writer.writerows(data)
+    file.close()
 
 with open("Investment.csv",'r') as file:
     reader = csv.DictReader(file)
